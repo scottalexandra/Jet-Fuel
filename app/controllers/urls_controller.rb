@@ -3,7 +3,6 @@ class UrlsController < ApplicationController
     @urls = Url.all
   end
 
-
   def new
     @url = Url.new
   end

@@ -26,7 +26,6 @@ describe "user visits the site and" do
     click_link_or_button "Shorten URL"
 
     within(".list-url") do
-      save_and_open_page
       expect(page).to have_content("https://al.x/0504")
       expect(page).to have_content("https://al.x/2e89")
     end
