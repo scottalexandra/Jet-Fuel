@@ -1,0 +1,24 @@
+<div class="long-url-form">
+  <%= form_for :url, url: urls_path do |f| %>
+    <%= f.label "Paste your long url here" %>
+    <%= f.text_field :long %>
+    <%= f.submit "Shorten URL" %>
+  <% end %>
+</div><hr>
+<div class="list-url">
+  <% if @urls %>
+    <table>
+      <tr><th><h4>Long URL</h4></th><th></th><th><h4>Shortened URL</h4></th><th></th></tr>
+      <% @urls.each do |url| %>
+        <tr>
+          <td>
+            <%= url.long %>
+          </td>
+          <td>
+            <%= url.short  %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>
