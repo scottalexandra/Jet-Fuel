@@ -1,6 +1,13 @@
 class UrlsController < ApplicationController
   def index
-    @urls = Url.all
+    @urls_time = Url.all.order("created_at DESC")
+    @urls_popular = Url.all.order("count DESC")
+  end
+
+  def show
+    @url = Url.find(params[:id])
+    @url.increment_count
+    redirect_to @url.long
   end
 
   def new
