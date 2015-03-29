@@ -30,7 +30,6 @@ describe "user visits the site and" do
     end
   end
 
-
   it "generates a short url that is redirected to long url" do
     visit root_path
     fill_in "url[long]", with: "http://google.com"
@@ -62,5 +61,4 @@ describe "user visits the site and" do
     @url1.save
     @url2.save
   end
-
 end
