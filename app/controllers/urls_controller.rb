@@ -1,7 +1,7 @@
 class UrlsController < ApplicationController
   def index
-    @urls_time = Url.all.order("created_at DESC")
-    @urls_popular = Url.all.order("count DESC")
+    @urls_time = Url.order("created_at DESC")
+    @urls_popular = Url.order("count DESC")
   end
 
   def show

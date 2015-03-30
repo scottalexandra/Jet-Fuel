@@ -5,7 +5,9 @@
     <%= f.submit "Shorten URL" %>
   <% end %>
 </div><hr>
-<div class="list-url-by-created-at">
+Sort By: <%= link_to "Created At", "#", id: "show-created-at", class: "colorize"  %>
+<%= link_to "Most Popular", "#", id: "show-popular" %>
+<div class="created-when" id="created-at">
   <% if @urls_time.present? %>
     <table>
       <tr>
@@ -14,6 +16,8 @@
         <th><h4>Shortened URL</h4></th>
         <th></th>
         <th>Created</th>
+        <th></th>
+        <th>Clicks</th>
       </tr>
       <% @urls_time.each do |url| %>
         <tr>
@@ -30,13 +34,17 @@
           <td>
             <%= distance_of_time_in_words(Time.now, url.created_at) %> ago
           </td>
+          <td>
+          </td>
+          <td>
+            <%= url.count %>
+          </td>
         </tr>
       <% end %>
     </table>
   <% end %>
 </div>
-<div class="list-url-by-pop">
-  <h3>Most Popular URLS</h3>
+<div class="popular hidden" id="popular">
   <% if @urls_popular %>
     <table>
       <tr>
