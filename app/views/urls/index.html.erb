@@ -5,6 +5,9 @@
     <%= f.submit "Shorten URL" %>
   <% end %>
 </div><hr>
+<form class="search-form">
+  <input type="text" placeholder="Search by keyword" id="search">
+</form>
 
 Sort By: <%= link_to "Created At", "#", id: "show-created-at", class: "colorize"  %>
 <%= link_to "Most Popular", "#", id: "show-popular" %><br>
@@ -25,22 +28,22 @@ Sort By: <%= link_to "Created At", "#", id: "show-created-at", class: "colorize"
       <% @urls_time.each do |url| %>
         <tr>
           <td>
-            <%= url.long %>
+            <p><%= url.long %></p>
           </td>
           <td>
           </td>
           <td>
-             <%= link_to url.short, url_path(url) %>
+             <p><%= link_to url.short, url_path(url) %></p>
           </td>
           <td>
           </td>
           <td>
-            <%= distance_of_time_in_words(Time.now, url.created_at) %> ago
+            <p><%= distance_of_time_in_words(Time.now, url.created_at) %> ago</p>
           </td>
           <td>
           </td>
           <td>
-            <%= url.count %>
+            <p><%= url.count %></p>
           </td>
         </tr>
       <% end %>
@@ -62,22 +65,22 @@ Sort By: <%= link_to "Created At", "#", id: "show-created-at", class: "colorize"
       <% @urls_popular.each do |url| %>
         <tr>
           <td>
-            <%= url.long %>
+            <p><%= url.long %></p>
           </td>
           <td>
           </td>
           <td>
-             <%= link_to url.short, url_path(url) %>
+             <p><%= link_to url.short, url_path(url) %></p>
           </td>
           <td>
           </td>
           <td>
-            <%= distance_of_time_in_words(Time.now, url.created_at) %> ago
+            <p><%= distance_of_time_in_words(Time.now, url.created_at) %> ago</p>
           </td>
           <td>
           </td>
           <td>
-            <%= url.count %>
+            <p><%= url.count %></p>
           </td>
         </tr>
       <% end %>
