@@ -1,7 +1,7 @@
 class Url < ActiveRecord::Base
+  validates :long, presence: true
   def create_short_url
-    rand_part = Digest::SHA256.hexdigest(long)[0..3]
-    self.short = "http://al.x/" + rand_part
+    self.short = "http://al.x/" + Digest::SHA256.hexdigest(long)[0..3]
   end
 
   def increment_count

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   toggleCreatedAt("#show-created-at",
                   "#created-at",
                   "#popular",
@@ -7,6 +8,7 @@ $(document).ready(function(){
                 "#popular",
                 "#created-at",
                 "#show-created-at");
+
 
   function toggleCreatedAt(buttonID, divID, divID2, buttonID2){
     $(buttonID).on("click", function(){
