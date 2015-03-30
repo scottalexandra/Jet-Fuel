@@ -10,7 +10,7 @@ describe "user visits the site and" do
     visit root_path
     fill_in "url[long]", with: "http://google.com"
     click_link_or_button "Shorten URL"
-    within(".list-url-by-created-at") do
+    within(".created-when") do
       expect(page).to have_content("http://al.x/aa22")
     end
   end
@@ -24,7 +24,7 @@ describe "user visits the site and" do
 
     fill_in "url[long]", with: "http://turing.io"
     click_link_or_button "Shorten URL"
-    within(".list-url-by-created-at") do
+    within(".created-when") do
       expect(page).to have_content("http://al.x/aa22")
       expect(page).to have_content("http://al.x/93b9")
     end
@@ -35,7 +35,7 @@ describe "user visits the site and" do
     fill_in "url[long]", with: "http://google.com"
     click_link_or_button "Shorten URL"
 
-    within(".list-url-by-created-at") do
+    within(".created-when") do
       expect(page).to have_link "http://al.x/aa22"
     end
   end
@@ -43,11 +43,11 @@ describe "user visits the site and" do
   it "see urls sorted by popularity" do
     create_and_save_urls
     visit root_path
-    within(".list-url-by-created-at") do
+    within(".created-when") do
       click_link "http://al.x/93b9"
     end
     visit root_path
-    within(".list-url-by-pop") do
+    within(".popular") do
       expect(page).to have_content("http://al.x/93b9 less than a minute ago 1")
       expect(page).to have_content("http://al.x/aa22 less than a minute ago 0")
     end
