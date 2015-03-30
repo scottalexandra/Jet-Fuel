@@ -5,7 +5,7 @@
     <%= f.submit "Shorten URL" %>
   <% end %>
 </div><hr>
-Sort By: <%= link_to "Created At", "#", id: "show-created-at"  %>
+Sort By: <%= link_to "Created At", "#", id: "show-created-at", class: "colorize"  %>
 <%= link_to "Most Popular", "#", id: "show-popular" %>
 <div class="created-when" id="created-at">
   <% if @urls_time.present? %>
