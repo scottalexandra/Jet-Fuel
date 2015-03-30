@@ -1,7 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Api::V1::UrlsController, :type => :controller do
-
+RSpec.describe Api::V1::UrlsController, type: :controller do
   before(:each) do
     Url.create(long: "http://google.com")
     Url.create(long: "http://turing.io")
@@ -36,6 +35,5 @@ RSpec.describe Api::V1::UrlsController, :type => :controller do
 
       expect(data.count).to eq(2)
     end
-
   end
 end

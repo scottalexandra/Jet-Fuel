@@ -18,5 +18,4 @@ class Api::V1::UrlsController < ApplicationController
   def url_params
     params.require(:url).permit(:long)
   end
-
 end
